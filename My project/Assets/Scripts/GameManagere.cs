@@ -17,12 +17,18 @@ public class GameManagere : MonoBehaviour
     [SerializeField] private Button restartButton;
     [SerializeField] private GameObject gameCanvas;
     
+    [Header("Audio")]
+    public AudioSource musicSource;
+    public AudioClip backgroundMusic;
     public void Start()
     {
         gameOverText.enabled = false;
         restartButton.enabled = false;
         SetCurrentEnemy();
         RefreshUI();
+        musicSource.clip = backgroundMusic;
+        musicSource.loop = true;
+        musicSource.Play();
     }
     public void Fight()
     {
@@ -78,6 +84,7 @@ public class GameManagere : MonoBehaviour
         if (player.Health  <= 0)
         {
            GameOver();
+           musicSource.Stop();
         }
     }
 }
