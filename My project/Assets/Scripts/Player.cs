@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : Character
 {
-    [SerializeField] private Wapon selectedWapon;
+    [SerializeField] private Weapon selectedWapon;
     public override void Attack(Character toHit)
     {
        // float damage = selectedWapon.GetDamage();
@@ -10,8 +10,15 @@ public class Player : Character
         toHit.GetHit(selectedWapon);
         Debug.Log("Player; - Attack enemy");
     }
-    public void Heal()
+    public void Heal(Character toHeal)
     {
-        Health += 2;
+        if (Health <= MaxHealth-10)
+        {
+            Health += 12;
+        }
+        else
+        {
+            Health = MaxHealth;
+        }
     }
 }

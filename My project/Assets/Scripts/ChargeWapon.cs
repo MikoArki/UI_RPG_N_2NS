@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChargeWapon : Wapon
+public class ChargeWapon : Weapon
 {
     [SerializeField] private float chargeAmount = 0.5f;
     private float charge = 0;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Wapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     [SerializeField] internal float damage;
 

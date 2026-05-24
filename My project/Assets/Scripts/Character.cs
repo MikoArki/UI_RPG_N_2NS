@@ -34,9 +34,10 @@ public abstract class Character : MonoBehaviour
         Debug.Log(charName + " get hit by " + damage + "! Health: " + Health);
     }
 
-    public void GetHit(Wapon wapon)
+    public void GetHit(Weapon weapon)
     {
-        health = Health - wapon.GetDamage();
-        Debug.Log(charName + " get hit by " + wapon.name + "! Health: " + Health);
+        health = Health - weapon.GetDamage();
+        Debug.Log(charName + " get hit by " + weapon.name + "! Health: " + Health);
     }
+    
 }
